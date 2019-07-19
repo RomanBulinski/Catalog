@@ -41,9 +41,31 @@ public class TestMain {
 
     @Test
     public void test() {
-        testing(s, "ladder" , "ladder > prx: $112 qty: 12");
-        testing(s, "saw" , "table saw > prx: $1099.99 qty: 5\nsaw > prx: $9 qty: 10\nsaw for metal > prx: $13.80 qty: 32");
-        testing(s, "wood pallet" , "wood pallet > prx: $65 qty: 21");
+        testing(s, "ladder", "ladder > prx: $112 qty: 12");
+        testing(s, "saw", "table saw > prx: $1099.99 qty: 5\nsaw > prx: $9 qty: 10\nsaw for metal > prx: $13.80 qty: 32");
+        testing(s, "wood pallet", "wood pallet > prx: $65 qty: 21");
 
     }
+
+
+    String s2 = "<prod><name>extractor</name><prx>71.4</prx><qty>20</qty></prod>\n\n" +
+            "<prod><name>bumper</name><prx>34.00</prx><qty>51</qty></prod>\n\n" +
+            "<prod><name>car battery</name><prx>71.4</prx><qty>8</qty></prod>\n\n" +
+            "<prod><name>wood pallet</name><prx>93.5</prx><qty>12</qty></prod>\n\n" +
+            "<prod><name>hoist</name><prx>11.00</prx><qty>12</qty></prod>\n\n" +
+            "<prod><name>window fan</name><prx>71.4</prx><qty>20</qty></prod>\n\n" +
+            "<prod><name>platform</name><prx>12.00</prx><qty>9</qty></prod>\n\n" +
+            "<prod><name>big hammer</name><prx>3.2</prx><qty>33</qty></prod>\n\n" +
+            "<prod><name>saw</name><prx>13.1</prx><qty>12</qty></prod>\n\n" +
+            "<prod><name>bumper</name><prx>120.3</prx><qty>16</qty></prod>\n\n" +
+            "<prod><name>big hammer</name><prx>34.00</prx><qty>16</qty></prod>\n\n" +
+            "<prod><name>saw</name><prx>11.00</prx><qty>8</qty></prod>";
+
+
+    @Test
+    public void test2() {
+        testing(s2, "screwdriver", "Nothing");
+    }
+
+
 }
