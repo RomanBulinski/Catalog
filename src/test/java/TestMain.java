@@ -31,19 +31,19 @@ public class TestMain {
                     "<prod><name>cattle prod</name><prx>990</prx><qty>2</qty></prod>\n\n" +
                     "<prod><name>window fan</name><prx>62</prx><qty>8</qty></prod>";
 
-//    private static void testing(String s, String art, String exp) {
-//        System.out.println("Testing with article: " + art);
-//        String ans = Main.catalog(s, art);
-//        System.out.println("Actual: " + ans);
-//        System.out.println("Expect: " + exp);
-//        assertEquals(exp, ans);
-//    }
-//
-//    @Test
-//    public void test() {
-//        testing(s, "ladder" , "ladder > prx: $112 qty: 12");
-//        testing(s, "saw" , "table saw > prx: $1099.99 qty: 5\nsaw > prx: $9 qty: 10\nsaw for metal > prx: $13.80 qty: 32");
-//        testing(s, "wood pallet" , "wood pallet > prx: $65 qty: 21");
-//
-//    }
+    private static void testing(String s, String art, String exp) {
+        System.out.println("Testing with article: " + art);
+        String ans = Main.catalog(s, art);
+        System.out.println("Actual: " + ans);
+        System.out.println("Expect: " + exp);
+        assertEquals(exp, ans);
+    }
+
+    @Test
+    public void test() {
+        testing(s, "ladder" , "ladder > prx: $112 qty: 12");
+        testing(s, "saw" , "table saw > prx: $1099.99 qty: 5\nsaw > prx: $9 qty: 10\nsaw for metal > prx: $13.80 qty: 32");
+        testing(s, "wood pallet" , "wood pallet > prx: $65 qty: 21");
+
+    }
 }

@@ -12,23 +12,24 @@ public class Main {
             "<prod><name>table saw</name><prx>1099.99</prx><qty>5</qty></prod>\n\n" +
             "<prod><name>saw</name><prx>9</prx><qty>10</qty></prod>";
 
+    public static String change(String input) {
+        return input.replaceAll("<prod><name>","")
+                .replaceAll("</name><prx>"," > prx: \\$")
+                .replaceAll("</prx><qty>"," qty: ")
+                .replaceAll("</qty></prod>","");
+    }
+
+
     public static String catalog(String s, String article) {
-
         String[] lines = s.split("\n\n");
-
         String result = Arrays.asList(lines).stream()
                 .filter(n -> n.contains(article))
                 .map(j -> change(j))
                 .collect(Collectors.joining("\n"));
-
         return result;
     }
 
-    public static String change(String input) {
-        return input.replaceAll("<prod><name>","")
-                .replaceAll("</name>","")
-                .replaceAll("</qty></prod>","");
-    }
+
 
 
     public static void main(String[] args) {
